@@ -1,0 +1,1 @@
+ALTER TABLE `graphics` ADD COLUMN `sort` int(11) DEFAULT 0

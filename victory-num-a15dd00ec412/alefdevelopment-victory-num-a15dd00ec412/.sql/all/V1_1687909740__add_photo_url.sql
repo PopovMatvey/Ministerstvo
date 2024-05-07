@@ -1,0 +1,1 @@
+update people set photo = concat('uploads/', city_id, '_', s_name, '.png') where city_id <> 0

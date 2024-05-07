@@ -1,0 +1,1 @@
+update people set photo = concat('/uploads/', photo) where id <> 0;

@@ -1,0 +1,2 @@
+svg.clipped{width:0!important;height:0!important}.afk_wrapper{display:none;height:100%;margin-top:-15px}.afk_wrapper image{-webkit-clip-path:url(#mapper);clip-path:url(#mapper)}.afk{height:100%;width:100%;opacity:1;-webkit-transition:opacity .5s;-o-transition:opacity .5s;transition:opacity .5s}.changed{opacity:.5}.center_square{width:20px;height:20px;border:2px solid #cd0000}.center_square,.line{position:absolute;opacity:0}.line{width:1px;background-color:red;z-index:2}.is_afk{display:block}.is_selected{opacity:1}
+/*# sourceMappingURL=chunk-1f3a1f6a.fba44b84.css.map */

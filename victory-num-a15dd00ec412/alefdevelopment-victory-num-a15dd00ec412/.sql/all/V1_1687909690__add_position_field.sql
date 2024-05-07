@@ -1,0 +1,1 @@
+ALTER TABLE `people` ADD COLUMN (`position` varchar(255) NOT NULL DEFAULT '');
