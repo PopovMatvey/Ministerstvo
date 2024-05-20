@@ -1,7 +1,7 @@
 import React from "react";
 import './css/style.css';
 import { HeaderInformation } from "../HeaderInformation";
-import { Menu } from "../Menu";
+// import { Menu } from "../Menu";
 
 /**
  * Шапка
@@ -12,7 +12,7 @@ export function Header() {
     return (
         <header>
             <HeaderInformation />
-            <Menu />
+            {/* <Menu /> */}
         </header>
     );
 }

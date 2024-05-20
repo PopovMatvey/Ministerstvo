@@ -2,13 +2,28 @@
 .header-information {
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content:space-around;
+    align-items: center;
+    padding: 10px 0px;
+}
+
+.header-information_logo{
+    display: flex;
     align-items: center;
 }
 
 .header-information h1 {
     font-size: 30px;
+    padding: 0px 5px;
     font-weight: bold;
+}
+
+.white{
+    color: #fff;
+}
+
+.red{
+    color: #da3c1f;
 }
 
 .header-information img {
