@@ -1,8 +1,8 @@
 import React from 'react';
 import { Header } from '../Header';
 import { Footer } from '../Footer';
-import './css/style.css';
 import { MainContent } from '../MainContent';
+import './css/style.css';
 
 /**
  * Приложениеы
@@ -14,9 +14,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className="App">
-        <MainContent />
-      </div >
+      <MainContent />
       <Footer />
     </>
   );

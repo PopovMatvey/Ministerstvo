@@ -1,1 +1,107 @@
 /* Стили основного контента */
+.main-content_container {
+    display: flex;
+    padding: 20px;
+}
+
+.main-content_container_slide-menu {
+    width: 35%;
+}
+
+.main-content_container_slide-menu__humans_container_input-row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    /* height: 10px; */
+    padding: 10px;
+}
+
+.main-content_container_slide-menu__humans_container_input-row img{
+    width: 30px;
+}
+
+.main-content_container_slide-menu__humans_container_input-row input{
+    border-bottom:1px solid #da3c1f;
+    background: none;
+    width: 80%;
+    padding: 0px 10px;
+}
+
+.main-content_container_slide-menu__humans_container_input-row input:focus{
+    border: 1px solid #fff;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.main-content_container_slide-menu h3 {
+    width: 100%;
+    background: #da3c1f;
+    margin: 0px 0px 5px;
+    padding: 5px 0px;
+    text-align: center;
+    color: #fff;
+}
+
+.main-content_map {
+    width: 65%;
+    border: 1px solid red;
+}
+
+.main-content_container_slide-menu__cities_container span {
+    display: block;
+    width: 100%;
+    color: #737373;
+    text-align: center;
+    padding: 5px 0px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.main-content_container_slide-menu__cities_container span:hover {
+    cursor: pointer;
+    color: #da3c1f;
+}
+
+.main-content_container_slide-menu__humans_container_user {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.main-content_container_slide-menu__humans_container_user:hover {
+    cursor: pointer;
+}
+
+.main-content_container_slide-menu__humans_container_user:hover img {
+    border: 3px solid #da3c1f;
+}
+
+.main-content_container_slide-menu__humans_container_user:hover h4 {
+    color: #da3c1f;
+}
+
+.main-content_container_slide-menu__humans_container_user:hover span {
+    color: #fff;
+}
+
+.main-content_container_slide-menu__humans_container_user img {
+    width: 50px;
+    border-radius: 50%;
+    border: 3px solid #737373;
+}
+
+.main-content_container_slide-menu__humans_container_user h4 {
+    font-weight: bold;
+    color: #737373;
+    font-size: 18px;
+    padding: 0px 0px 5px;
+}
+
+.main-content_container_slide-menu__humans_container_user span {
+    font-weight: 500;
+    color: #737373;
+    font-size: 12px;
+    padding: 0px 0px 5px;
+}
