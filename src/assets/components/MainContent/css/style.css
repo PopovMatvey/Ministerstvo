@@ -120,18 +120,40 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 5%;
+    width: 3%;
     border: 1px solid #da3c1f;
     background: #da3c1f;
 }
 
 .slide-menu-container button {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
     background: none;
-    height: 40px;
     text-align: center;
-    padding: 0px 30px;
+    padding: 5px 30px;
     transform: rotate(270deg);
     color: #fff;
     text-transform: uppercase;
     font-weight: bold;
 }
+
+.slide-menu-container_hrefs{
+    background: #da3c1f;
+}
+.region{
+    width: 10px;
+    fill: black;
+}
+
+/* 
+.youtube-icon {
+    width: 100px;
+    height: auto;
+    fill: black;
+}
+
+.youtube-icon:hover {
+    fill: red;
+    cursor: pointer;
+} */
