@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/style.css";
 import logoUser from "../../images/user.jpg"
-import lupa from "../../images/lupa.svg"
+import lupa from "../../images/lupa.png"
 // import { Route, Routes } from 'react-router-dom';
 // import russia from "./images/russia.svg";
 
@@ -33,46 +33,61 @@ export function MainContent() {
         "Шиловский район"
     ];
 
+    /***
+     * 
+     */
+    const handlerOnClickSideMenuButton = () => {
+
+    }
+
     return (
         <>
-            <div className="main-content_container">
-                <div className="main-content_container_slide-menu">
-                    <div className="main-content_container_slide-menu__humans">
-                        <h3>Люди</h3>
-                        <div className="main-content_container_slide-menu__humans_container">
-                            <div className="main-content_container_slide-menu__humans_container_input-row">
-                                <button>
-                                    <img src={lupa} alt="лупа" />
-                                </button>
-                                <input type="text" />
-                            </div>
-                            <div className="main-content_container_slide-menu__humans_container_user">
-                                <img src={logoUser} alt="user" />
-                                <div className="main-content_container_slide-menu__humans_container_user__text">
-                                    <h4>К. АЛИХАНОВ</h4>
-                                    <span>С 10.09.1941Г. МОБИЛИЗОВАН В РЯДЫ РАБОЧЕ...</span>
+            <div className="main-content">
+                <div className="main-content_container">
+                    <div className="main-content_container_slide-menu">
+                        <div className="main-content_container_slide-menu__humans">
+                            <h3>Люди</h3>
+                            <div className="main-content_container_slide-menu__humans_container">
+                                <div className="main-content_container_slide-menu__humans_container_input-row">
+                                    <button>
+                                        <img src={lupa} alt="лупа" />
+                                    </button>
+                                    <input type="text" />
+                                </div>
+                                <div className="main-content_container_slide-menu__humans_container_user">
+                                    <img src={logoUser} alt="user" />
+                                    <div className="main-content_container_slide-menu__humans_container_user__text">
+                                        <h4>К. АЛИХАНОВ</h4>
+                                        <span>С 10.09.1941Г. МОБИЛИЗОВАН В РЯДЫ РАБОЧЕ...</span>
+                                    </div>
+                                </div>
+                                <div className="main-content_container_slide-menu__humans_container_user">
+                                    <img src={logoUser} alt="user" />
+                                    <div className="main-content_container_slide-menu__humans_container_user__text">
+                                        <h4>К. АЛИХАНОВ</h4>
+                                        <span>С 10.09.1941Г. МОБИЛИЗОВАН В РЯДЫ РАБОЧЕ...</span>
+                                    </div>
                                 </div>
                             </div>
-                            <div className="main-content_container_slide-menu__humans_container_user">
-                                <img src={logoUser} alt="user" />
-                                <div className="main-content_container_slide-menu__humans_container_user__text">
-                                    <h4>К. АЛИХАНОВ</h4>
-                                    <span>С 10.09.1941Г. МОБИЛИЗОВАН В РЯДЫ РАБОЧЕ...</span>
-                                </div>
+                        </div>
+                        <div className="main-content_container_slide-menu__cities">
+                            <h3>Города</h3>
+                            <div className="main-content_container_slide-menu__cities_container">
+                                {arrayRegions.map((element: any, index: number) => (
+                                    <span>{element}</span>
+                                ))}
                             </div>
                         </div>
                     </div>
-                    <div className="main-content_container_slide-menu__cities">
-                        <h3>Города</h3>
-                        <div className="main-content_container_slide-menu__cities_container">
-                            {arrayRegions.map((element: any, index: number) => (
-                                <span>{element}</span>
-                            ))}
-                        </div>
+                    <div className="main-content_map">
+
                     </div>
                 </div>
-                <div className="main-content_map">
-
+                <div className="slide-menu-container_hrefs">
+                    {/* <button>Книги победы</button>           */}
+                </div>
+                <div className="slide-menu-container">
+                    <button onClick={handlerOnClickSideMenuButton}>Книги победы</button>
                 </div>
             </div>
         </>
