@@ -56,7 +56,7 @@
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
 }
 
 .header-content-books_hrefs a {
