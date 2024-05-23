@@ -138,12 +138,24 @@
     font-weight: bold;
 }
 
-.slide-menu-container_hrefs{
+.slide-menu-container_hrefs {
     background: #da3c1f;
 }
-.region{
+
+.region {
     width: 10px;
     fill: black;
+}
+
+.svg-icon {
+    fill: slategrey;
+    stroke: black;
+    stroke-width: 3;
+    -webkit-transform: rotate(45deg);
+}
+
+.svg-icon:hover {
+    fill: rgb(145, 8, 199);
 }
 
 /* 
