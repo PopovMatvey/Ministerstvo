@@ -199,9 +199,9 @@
 }
 
 @media screen and (max-width:700px) {
-    .main-content_map {
+    /* .main-content_map { */
         /* display: none; */
-    }
+    /* } */
 }
 
 .main-content_map svg {
