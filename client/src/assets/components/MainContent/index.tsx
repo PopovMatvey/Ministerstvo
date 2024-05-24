@@ -41,13 +41,17 @@ export function MainContent() {
     ];
 
     const [stateViewBooks, setStateViewBooks] = useState(false);
+    const [stateViewCities, setStateViewCities] = useState(false);
 
     /***
      * 
      */
     const handlerOnClickSideMenuButton = () => {
         setStateViewBooks(!stateViewBooks);
-        console.log(ryazanRegion)
+    }
+
+    const handlerColomnCities = () => {
+        setStateViewCities(!stateViewCities);
     }
 
     return (
@@ -81,15 +85,18 @@ export function MainContent() {
                             </div>
                         </div>
                         <div className="main-content_container_slide-menu__cities">
-                            <h3>Города</h3>
-                            <div className="main-content_container_slide-menu__cities_container">
+                                <h3>Города</h3>
+                            <div className="main-content_container_slide-menu__cities_row">
+                                <button onClick={handlerColomnCities}>Развернуть v</button>
+                            </div>
+                            {stateViewCities && <div className="main-content_container_slide-menu__cities_container">
                                 {arrayRegions.map((element: any, index: number) => (
                                     <span>{element}</span>
                                 ))}
-                            </div>
+                            </div>}
                         </div>
                     </div>
-                    <div className="main-content_map" dangerouslySetInnerHTML={{ __html: ryazanAllRegionSVG }}></div> 
+                    <div className="main-content_map" dangerouslySetInnerHTML={{ __html: ryazanAllRegionSVG }}></div>
 
                 </div>
                 <div className="slide-menu-container">
