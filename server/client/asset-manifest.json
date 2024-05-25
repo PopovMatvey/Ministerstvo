@@ -1,10 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.efed3b17.css",
-    "main.js": "/static/js/main.c653e782.js",
+    "main.css": "/static/css/main.36197aa5.css",
+    "main.js": "/static/js/main.d1d706e7.js",
     "static/js/787.fcf432be.chunk.js": "/static/js/787.fcf432be.chunk.js",
     "static/media/bg-inner.c6d78860.jpg": "/static/media/bg-inner.c6d78860.11ca4992133c218ad7e4.jpg",
-    "static/media/ryazan-region.svg": "/static/media/ryazan-region.285dc2a4949c020321a143eaf2737d11.svg",
     "static/media/BerlinType-Bold.otf": "/static/media/BerlinType-Bold.9dab94178b1737b870ba.otf",
     "static/media/BerlinType-Regular.otf": "/static/media/BerlinType-Regular.1bbba4deb8775ccac9dc.otf",
     "static/media/framd.otf": "/static/media/framd.953badef5157dd688816.otf",
@@ -13,12 +12,12 @@
     "static/media/lupa.png": "/static/media/lupa.0b2dee47a93dc866089b.png",
     "static/media/Concrete-Regular.otf": "/static/media/Concrete-Regular.fcb1090140aa5427f444.otf",
     "index.html": "/index.html",
-    "main.efed3b17.css.map": "/static/css/main.efed3b17.css.map",
-    "main.c653e782.js.map": "/static/js/main.c653e782.js.map",
+    "main.36197aa5.css.map": "/static/css/main.36197aa5.css.map",
+    "main.d1d706e7.js.map": "/static/js/main.d1d706e7.js.map",
     "787.fcf432be.chunk.js.map": "/static/js/787.fcf432be.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.efed3b17.css",
-    "static/js/main.c653e782.js"
+    "static/css/main.36197aa5.css",
+    "static/js/main.d1d706e7.js"
   ]
 }
