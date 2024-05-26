@@ -3,45 +3,20 @@ import "./css/style.css";
 import logoUser from "../../images/user.jpg"
 import lupa from "../../images/lupa.png"
 import book from "../../images/book.png"
-import ribnoe from "./images/ribnoe-region.svg"
-import klepikovskiy from "./images/klepilovskiy-region.svg"
-import ryazanRegion from "./images/ryazan-region.svg"
-import ryazanRegionMap from "./images/ryazan-region-map.svg"
-import ryazanRegionSVG from "../../images/ryazan-region-mk6.svg"
 import { ryazanAllRegionSVG } from "./data/ryazanRegionSVG";
-// import { Route, Routes } from 'react-router-dom';
-// import russia from "./images/russia.svg";
+import { arrayRegions } from "./data/arrayRegions";
 
 export function MainContent() {
-    const arrayRegions = [
-        "Александро - Невский район",
-        "Ермишинский район",
-        "Захаровский район",
-        "Кадомский район",
-        "Касимовский район",
-        "Клепиковский район",
-        "Кораблинский район",
-        "Милославский район",
-        "Михайловский район",
-        "Пителинский район",
-        "Пронский район",
-        "Путятинский район",
-        "Рыбновский район",
-        "Ряжский район",
-        "Рязанский район",
-        "Сапожковский район",
-        "Сараевский район",
-        "Сасовский район",
-        "Скопинский район", "Спасский район",
-        "Старожиловский район",
-        "Ухоловский район",
-        "Чучковский район",
-        "Шацкий район",
-        "Шиловский район"
-    ];
-
     const [stateViewBooks, setStateViewBooks] = useState(false);
     const [stateViewCities, setStateViewCities] = useState(false);
+    const [currentCity, setCurrentCity] = useState("");
+
+    /***
+     * 
+     */
+    const getCurrentIndexRegion = (currentClassValue: string) => {
+        return arrayRegions.findIndex((element) => (element.class === currentClassValue));
+    }
 
     /***
      * 
@@ -50,8 +25,24 @@ export function MainContent() {
         setStateViewBooks(!stateViewBooks);
     }
 
+    /***
+     * 
+     */
     const handlerColomnCities = () => {
         setStateViewCities(!stateViewCities);
+    }
+
+    /***
+     * 
+     */
+    const handlerMapOnClick = (event: any) => {
+        let currentIndex = getCurrentIndexRegion(event.target.className.baseVal);
+
+        if (currentIndex != -1) {
+            setCurrentCity(arrayRegions[currentIndex].name);
+        } else {
+            setCurrentCity("");
+        }
     }
 
     return (
@@ -85,19 +76,21 @@ export function MainContent() {
                             </div>
                         </div>
                         <div className="main-content_container_slide-menu__cities">
-                                <h3>Города</h3>
+                            <h3>Города</h3>
                             <div className="main-content_container_slide-menu__cities_row">
                                 <button onClick={handlerColomnCities}>Развернуть v</button>
                             </div>
                             {stateViewCities && <div className="main-content_container_slide-menu__cities_container">
                                 {arrayRegions.map((element: any, index: number) => (
-                                    <span>{element}</span>
+                                    <span>{element.name}</span>
                                 ))}
                             </div>}
                         </div>
                     </div>
-                    <div className="main-content_map" dangerouslySetInnerHTML={{ __html: ryazanAllRegionSVG }}></div>
-
+                    <div className="main-content_map_title">
+                        <h3>{currentCity}</h3>
+                    </div>
+                    <div className="main-content_map" dangerouslySetInnerHTML={{ __html: ryazanAllRegionSVG }} onClick={handlerMapOnClick}></div>
                 </div>
                 <div className="slide-menu-container">
                     <button onClick={handlerOnClickSideMenuButton}>Книги победы <img src={book} alt="книга" /></button>
