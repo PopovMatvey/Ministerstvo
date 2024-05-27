@@ -1,5 +1,6 @@
-export interface Exemple {
-    parFieldString: string;
-    parFieldBoolean: boolean;
+export interface Region {
+    id_region: number;
+    name_region: string;
+    class_region:string;
     /*...*/ 
 }

@@ -5,6 +5,8 @@ import lupa from "../../images/lupa.png"
 import book from "../../images/book.png"
 import { ryazanAllRegionSVG } from "./data/ryazanRegionSVG";
 import { arrayRegions } from "./data/arrayRegions";
+// import { request } from "../../hook/request";
+import { useGetRequest } from "../../hook/useAudioArray";
 
 export function MainContent() {
     const [stateViewBooks, setStateViewBooks] = useState(false);
@@ -15,7 +17,7 @@ export function MainContent() {
      * 
      */
     const getCurrentIndexRegion = (currentClassValue: string) => {
-        return arrayRegions.findIndex((element) => (element.class === currentClassValue));
+        return arrayRegions.findIndex((element) => (element.class_region === currentClassValue));
     }
 
     /***
@@ -40,7 +42,7 @@ export function MainContent() {
         let currentIndex: number = getCurrentIndexRegion(event.target.className.baseVal);
 
         if (currentIndex !== -1) {
-            setCurrentCity(arrayRegions[currentIndex].name);
+            setCurrentCity(arrayRegions[currentIndex].name_region);
         } else {
             setCurrentCity("");
         }
