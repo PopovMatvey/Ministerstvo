@@ -86,7 +86,7 @@ const arrayRegions = [
     },
     {
         name: "Старожиловский район",
-        class: "spask-ryazanskiy-region",
+        class: "starojilovskiy-region",
     },
     {
         name: "Ухоловский район",

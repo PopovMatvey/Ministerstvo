@@ -36,6 +36,7 @@ export function MainContent() {
      * 
      */
     const handlerMapOnClick = (event: any) => {
+        console.log(event.target.className.baseVal)
         let currentIndex: number = getCurrentIndexRegion(event.target.className.baseVal);
 
         if (currentIndex !== -1) {
@@ -82,7 +83,7 @@ export function MainContent() {
                             </div>
                             {stateViewCities && <div className="main-content_container_slide-menu__cities_container">
                                 {arrayRegions.map((element: any, index: number) => (
-                                    <span>{element.name}</span>
+                                    <span key={index}>{element.name}</span>
                                 ))}
                             </div>}
                         </div>
@@ -97,16 +98,15 @@ export function MainContent() {
                 </div>
                 {stateViewBooks && <div className="slide-menu-container_hrefs">
                     <button>
-                        <img src={book} alt="" />
+                        <img src={book} alt="Иконка книги" />
                         <span> 75 лет книга победы</span>
                     </button>
                     <button>
-                        <img src={book} alt="" />
+                        <img src={book} alt="Иконка книги" />
                         <span>70 лет книга победы</span>
-
                     </button>
                     <button>
-                        <img src={book} alt="" />
+                        <img src={book} alt="Иконка книги" />
                         <span>Года ВОВ в Рязанской области</span>
                     </button>
                 </div>}
