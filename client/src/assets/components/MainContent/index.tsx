@@ -36,9 +36,9 @@ export function MainContent() {
      * 
      */
     const handlerMapOnClick = (event: any) => {
-        let currentIndex = getCurrentIndexRegion(event.target.className.baseVal);
+        let currentIndex: number = getCurrentIndexRegion(event.target.className.baseVal);
 
-        if (currentIndex != -1) {
+        if (currentIndex !== -1) {
             setCurrentCity(arrayRegions[currentIndex].name);
         } else {
             setCurrentCity("");
