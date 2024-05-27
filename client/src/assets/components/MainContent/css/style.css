@@ -1,6 +1,7 @@
 /* Стили основного контента */
 .main-content {
     display: flex;
+    color: #737373;
     justify-content: space-between;
 }
 
@@ -59,11 +60,14 @@
 .main-content_container_slide-menu__cities_container span {
     display: block;
     width: 100%;
-    color: #737373;
     text-align: center;
     padding: 5px 0px;
     text-transform: uppercase;
     font-weight: bold;
+}
+
+.active-city{
+    color: #da3c1f;
 }
 
 .main-content_container_slide-menu__cities_row {
@@ -233,12 +237,6 @@
         width: 100%;
     }
 }
-
-/* @media screen and (max-width:700px) { */
-    /* .main-content_map { */
-    /* display: none; */
-    /* } */
-/* } */
 
 .main-content_map svg {
     height: 50%;

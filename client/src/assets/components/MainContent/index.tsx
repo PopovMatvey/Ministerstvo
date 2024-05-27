@@ -39,7 +39,6 @@ export function MainContent() {
     const onKeyDownInputSearchPeople = (event: any) => {
         let keyField = "surname";
 
-        // currentArrayPeople = 
         setCurrentPeople(
             findPeopleArray(
                 arrayPeople,
@@ -128,13 +127,31 @@ export function MainContent() {
      * @param event 
      */
     const handlerMapOnClick = (event: any) => {
-        let currentIndex: number = getCurrentIndexRegion(event.target.className.baseVal);
+        let currentTarget = event.target.className.baseVal;
+        let currentIndex: number = getCurrentIndexRegion(currentTarget);
+        let spanCity = document.querySelector(".main-content_container_slide-menu__cities_container")?.children;
 
         if (currentIndex !== -1) {
             setCurrentCity(arrayRegions[currentIndex].name_region);
         } else {
             setCurrentCity("");
         }
+
+        let i = 0;
+
+
+
+        for (let key in spanCity) {
+            if (spanCity[i] != undefined) {
+                if (spanCity[i].classList.contains("active-city")) {
+                    spanCity[i].classList.remove("active-city")
+                }
+            }
+            
+            i++;
+        }
+
+        document.querySelector(`#${currentTarget}`)?.classList.add("active-city");
     }
 
     /**
