@@ -15,8 +15,8 @@ export function MainContent() {
     const [stateViewBooks, setStateViewBooks] = useState(false);
     const [stateViewCities, setStateViewCities] = useState(false);
     const [currentCity, setCurrentCity] = useState("");
-    const arrayRegions: Region[] = useGetRequest("http://localhost:2000/api/regions").requestArray;
-    const arrayPeople: People[] = useGetRequest("http://localhost:2000/api/people").requestArray;
+    const arrayRegions: Region[] = useGetRequest("http://5.35.94.98:2000/api/regions").requestArray;
+    const arrayPeople: People[] = useGetRequest("http://5.35.94.98:2000/api/people").requestArray;
     const [currentArrayPeople, setCurrentPeople] = useState(arrayPeople);
     const [checkCurrentPeople, setCheckCurrentPeople] = useState(true);
 
@@ -147,7 +147,7 @@ export function MainContent() {
                     spanCity[i].classList.remove("active-city")
                 }
             }
-            
+
             i++;
         }
 
