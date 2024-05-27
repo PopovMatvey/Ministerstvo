@@ -19,5 +19,5 @@ export function useGetRequest(parUrl:string) {
         featchAudioArray();
     }, [])
 
-    return { requestArray };
+    return { requestArray};
 }
