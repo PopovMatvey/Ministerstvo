@@ -12,7 +12,6 @@ export function Header() {
     return (
         <header>
             <HeaderInformation />
-            {/* <Menu /> */}
         </header>
     );
 }
