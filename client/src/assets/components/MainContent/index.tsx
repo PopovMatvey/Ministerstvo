@@ -4,12 +4,9 @@ import logoUser from "../../images/user.jpg"
 import lupa from "../../images/lupa.png"
 import book from "../../images/book.png"
 import { ryazanAllRegionSVG } from "./data/ryazanRegionSVG";
-// import { arrayRegions } from "./data/arrayRegions";
-// import { arrayPeople } from "./data/arrayPeople";
 import { Region } from "../../types/Region";
 import { useGetRequest } from "../../hook/useAudioArray";
 import { People } from "../../types/People";
-// import { arrayPeople } from "./data/arrayPeople";
 
 export function MainContent() {
     const [stateViewBooks, setStateViewBooks] = useState(false);
@@ -127,6 +124,7 @@ export function MainContent() {
      * @param event 
      */
     const handlerMapOnClick = (event: any) => {
+        let indexSpan = 0;
         let currentTarget = event.target.className.baseVal;
         let currentIndex: number = getCurrentIndexRegion(currentTarget);
         let spanCity = document.querySelector(".main-content_container_slide-menu__cities_container")?.children;
@@ -137,18 +135,14 @@ export function MainContent() {
             setCurrentCity("");
         }
 
-        let i = 0;
-
-
-
         for (let key in spanCity) {
-            if (spanCity[i] != undefined) {
-                if (spanCity[i].classList.contains("active-city")) {
-                    spanCity[i].classList.remove("active-city")
+            if (spanCity[indexSpan] != undefined) {
+                if (spanCity[indexSpan].classList.contains("active-city")) {
+                    spanCity[indexSpan].classList.remove("active-city")
                 }
             }
 
-            i++;
+            indexSpan++;
         }
 
         document.querySelector(`#${currentTarget}`)?.classList.add("active-city");
@@ -182,21 +176,23 @@ export function MainContent() {
                                     <input type="text" onKeyUp={onKeyDownInputSearchPeople} />
                                 </div>
                                 {
-                                    checkCurrentPeople ? (currentArrayPeople.map((element: People, index: number) => (
-                                        <div className="main-content_container_slide-menu__humans_container_user" key={index} >
-                                            {element.photo ? (
-                                                <img src={element.photo} alt="user" />
-                                            ) : (
-                                                <img src={logoUser} alt="user" />
-                                            )}
-                                            <div className="main-content_container_slide-menu__humans_container_user__text">
-                                                <h4>{element.surname} {element.patronymic[0]}.</h4>
-                                                <span>
-                                                    {getShortString(element.war_description)}
-                                                </span>
-                                            </div>
-                                        </div>)
-                                    )) : (
+                                    checkCurrentPeople ? (
+                                        currentArrayPeople.map((element: People, index: number) => (
+                                            <div className="main-content_container_slide-menu__humans_container_user" key={index} >
+                                                {element.photo ? (
+                                                    <img src={element.photo} alt="user" />
+                                                ) : (
+                                                    <img src={logoUser} alt="user" />
+                                                )}
+                                                <div className="main-content_container_slide-menu__humans_container_user__text">
+                                                    <h4>{element.surname} {element.patronymic[0]}.</h4>
+                                                    <span>
+                                                        {getShortString(element.war_description)}
+                                                    </span>
+                                                </div>
+                                            </div>)
+                                        )
+                                    ) : (
                                         <div className="main-content_container_slide-menu__humans_container_user">
                                             <h4>Таких людей нет</h4>
                                         </div>
