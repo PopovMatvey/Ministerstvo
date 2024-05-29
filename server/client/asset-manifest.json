@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.842631dc.css",
-    "main.js": "/static/js/main.d18fadbd.js",
+    "main.css": "/static/css/main.74a6bced.css",
+    "main.js": "/static/js/main.d98d35c5.js",
     "static/js/787.fcf432be.chunk.js": "/static/js/787.fcf432be.chunk.js",
     "static/media/bg-inner.c6d78860.jpg": "/static/media/bg-inner.c6d78860.11ca4992133c218ad7e4.jpg",
     "static/media/BerlinType-Bold.otf": "/static/media/BerlinType-Bold.9dab94178b1737b870ba.otf",
@@ -12,12 +12,12 @@
     "static/media/lupa.png": "/static/media/lupa.0b2dee47a93dc866089b.png",
     "static/media/Concrete-Regular.otf": "/static/media/Concrete-Regular.fcb1090140aa5427f444.otf",
     "index.html": "/index.html",
-    "main.842631dc.css.map": "/static/css/main.842631dc.css.map",
-    "main.d18fadbd.js.map": "/static/js/main.d18fadbd.js.map",
+    "main.74a6bced.css.map": "/static/css/main.74a6bced.css.map",
+    "main.d98d35c5.js.map": "/static/js/main.d98d35c5.js.map",
     "787.fcf432be.chunk.js.map": "/static/js/787.fcf432be.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.842631dc.css",
-    "static/js/main.d18fadbd.js"
+    "static/css/main.74a6bced.css",
+    "static/js/main.d98d35c5.js"
   ]
 }

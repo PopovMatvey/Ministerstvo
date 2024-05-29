@@ -9,12 +9,13 @@ import { useGetRequest } from "../../hook/useAudioArray";
 import { People } from "../../types/People";
 
 export function MainContent() {
-
+    const apiPeople = "http://5.35.94.98:2000/api/people";
+    // const apiPeople = "http://localhost:2000/api/people";
     const [stateViewBooks, setStateViewBooks] = useState(false);
     const [stateViewCities, setStateViewCities] = useState(false);
     const [currentCity, setCurrentCity] = useState("");
     const arrayRegions: Region[] = useGetRequest("http://5.35.94.98:2000/api/regions").requestArray;
-    const arrayPeople: People[] = useGetRequest("http://5.35.94.98:2000/api/people").requestArray;
+    const arrayPeople: People[] = useGetRequest(apiPeople).requestArray;
     const [currentArrayPeople, setCurrentPeople] = useState(arrayPeople);
     const [checkCurrentPeople, setCheckCurrentPeople] = useState(true);
     const [firstRun, setFirstRun] = useState(true);
@@ -165,8 +166,8 @@ export function MainContent() {
                 if (pathArray[indexPath].classList.contains("active-region")) {
                     pathArray[indexPath].classList.remove("active-region");
                 }
-
             }
+
             indexPath++;
         }
 

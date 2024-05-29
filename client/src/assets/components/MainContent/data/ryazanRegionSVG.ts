@@ -2,6 +2,7 @@ export const ryazanAllRegionSVG = `
 <svg width="1413" height="1358" version="1.1" xmlns="http://www.w3.org/2000/svg">
 <defs>
         <style type="text/css">
+
 g:hover{
     cursor:pointer;
 }
