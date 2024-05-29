@@ -10,6 +10,10 @@ path:hover{
     fill:#ff0000;
 }
 
+.active-region{
+    fill:#ff0000;
+}
+
 </style>
     </defs>
     <g>
