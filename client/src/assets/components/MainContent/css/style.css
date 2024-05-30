@@ -9,39 +9,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    padding: 20px;
+    padding: 20px 0px;
     width: 95%;
-    height: 180vh;
-}
-
-@media screen and (max-width:2000px) {
-    .main-content_container {
-        height: 250vh;
-    }
-}
-
-@media screen and (max-width:1600px) {
-    .main-content_container {
-        height: 220vh;
-    }
-}
-
-@media screen and (max-width:1600px) {
-    .main-content_container {
-        height: 220vh;
-    }
-}
-
-@media screen and (max-width:1200px) {
-    .main-content_container {
-        height: 220vh;
-    }
-}
-
-@media screen and (max-width:900px) {
-    .main-content_container {
-        height: 200vh;
-    }
 }
 
 .main-content_container_slide-menu {
@@ -97,7 +66,7 @@
     font-weight: bold;
 }
 
-.active-city{
+.active-city {
     color: #da3c1f;
 }
 
@@ -116,7 +85,7 @@
     transition: 1s all;
 }
 
-.main-content_container_slide-menu__cities_row button:active{
+.main-content_container_slide-menu__cities_row button:active {
     transform: scale(1.1);
 }
 
@@ -185,7 +154,7 @@
     background: #da3c1f;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     .slide-menu-container {
         display: none;
     }
@@ -214,7 +183,7 @@
     width: 200px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
     .slide-menu-container_hrefs {
         display: none;
     }
@@ -239,7 +208,7 @@
     width: 100%;
 }
 
-.main-content_map_title h3{
+.main-content_map_title h3 {
     color: #fff;
     font-size: 18px;
     font-weight: bold;
@@ -253,80 +222,96 @@
     align-items: center;
     flex-wrap: wrap;
     width: 100%;
-    /* height: 70vh; */
-    margin: 20px 0px;
 }
 
-/* svg{
-    width:800px;
-} */
-
-@media screen and (max-width:1110px) {
+@media screen and (max-width:771px) {
     .main-content_map {
-        /* height: 50vh; */
-    }
-}
-
-@media screen and (max-width:700px) {
-    .main-content_map {
-        width: 100%;
+        height: auto;
     }
 }
 
 .main-content_map svg {
-    display: flex;
-    height: 150vh;
-    width: 100%;
+    height: auto;
+    width: 45%;
 }
 
-@media screen and (max-width:1250px) {
+.main-content_map svg g {
+    transform: scale(2.5);
+}
+
+@media screen and (max-width:1800px) {
     .main-content_map svg {
-        /* width: 70%; */
+        width: 50%;
+    }
+
+
+    .main-content_map svg g {
+        transform: scale(2);
     }
 }
 
-@media screen and (max-width:1500px) {
-    .main-content_map svg g{
-        transform:scale(2.5);
+@media screen and (max-width:1400px) {
+    .main-content_map svg {
+        width: 65%;
     }
 }
 
-
-@media screen and (max-width:1000px) {       
-    .main-content_map svg g{
-        transform:scale(2.3);
-    }
-}
-
-@media screen and (max-width:900px) {       
-    .main-content_map svg g{
-        transform:scale(2.1);
-    }
-}
-
-@media screen and (max-width:800px) {        
-    .main-content_map svg g{
-        transform:scale(1.9);
-    }
-}
-
-@media screen and (max-width:700px) {   
-    .main-content_map svg g{
-        transform:scale(1.6);
+@media screen and (max-width:1200px) {
+    .main-content_map svg {
+        width: 75%;
     }
 }
 
 
-@media screen and (max-width:600px) {
-    .main-content_map svg g{
-        transform:scale(1.4);
+@media screen and (max-width:991px) {
+    .main-content_map svg {
+        transform: scale(1);
     }
 }
 
+@media screen and (max-width:930px) {
+    .main-content_map svg {
+        width: 100%;
+        transform: scale(1);
+    }
+}
 
+@media screen and (max-width:771px) {
+    .main-content_map svg g {
+        transform: scale(1.5);
+    }
 
-@media screen and (max-width:500px) {   
-    .main-content_map svg g{
-        transform:scale(1.1);
+    .main-content_map svg {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width:691px) {
+    .main-content_map svg {
+        width: 80%;
+    }
+
+    .main-content_map svg g {
+        transform: scale(1.5);
+    }
+}
+
+@media screen and (max-width:623px) {
+    .main-content_map svg {
+        width: 70%;
+    }
+
+    .main-content_map svg g {
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width:433px) {
+    .main-content_map svg {
+        width: 60%;
+    }
+
+    .main-content_map svg g {
+        transform: scale(0.7);
     }
 }

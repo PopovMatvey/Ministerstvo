@@ -14,8 +14,9 @@ function App() {
   return (
     <>
       <Header />
+      
       <MainContent />
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

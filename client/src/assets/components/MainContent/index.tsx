@@ -7,6 +7,7 @@ import { ryazanAllRegionSVG } from "./data/ryazanRegionSVG";
 import { Region } from "../../types/Region";
 import { useGetRequest } from "../../hook/useAudioArray";
 import { People } from "../../types/People";
+import { Footer } from "../Footer";
 
 export function MainContent() {
     const apiPeople = "http://5.35.94.98:2000/api/people";
@@ -21,6 +22,7 @@ export function MainContent() {
     const [firstRun, setFirstRun] = useState(true);
     // setCurrentPeople(arrayPeople);
     // console.log(arrayPeople)
+    // console.log(window.innerWidth)
 
     /**
      * 
@@ -264,9 +266,14 @@ export function MainContent() {
                             </div>}
                         </div>
                     </div>
-                    <div className="main-content_map_title">
-                        <h3>{currentCity}</h3>
-                    </div>
+                    {
+                        currentCity ? (
+                            <div className="main-content_map_title">
+                                <h3>{currentCity}</h3>
+                            </div>)
+                            : (
+                                <></>
+                            )}
                     <div className="main-content_map" dangerouslySetInnerHTML={{ __html: ryazanAllRegionSVG }} onClick={handlerMapOnClick}></div>
                 </div>
                 <div className="slide-menu-container">
@@ -286,7 +293,9 @@ export function MainContent() {
                         <span>Года ВОВ в Рязанской области</span>
                     </button>
                 </div>}
+
             </div >
+            {/* <Footer /> */}
         </>
     )
 }
