@@ -15,7 +15,13 @@
 
 .main-content_container_slide-menu {
     width: 40%;
-    min-width: 280px;
+    min-width: 350px;
+}
+
+@media screen and (max-width:991px) {
+    .main-content_container_slide-menu {
+        width: 50%;
+    }
 }
 
 .main-content_container_slide-menu__humans_container_input-row {
@@ -25,6 +31,7 @@
     width: 100%;
     padding: 10px;
 }
+
 
 .main-content_container_slide-menu__humans_container_input-row button {
     width: 30px;
@@ -262,7 +269,7 @@
     .main-content_map svg {
         width: 65%;
     }
-    
+
     .main-content_map svg g {
         transform: scale(1.4);
     }
@@ -273,7 +280,7 @@
     .main-content_map svg {
         transform: scale(1);
     }
-    
+
     .main-content_map svg g {
         transform: scale(1.2);
     }
