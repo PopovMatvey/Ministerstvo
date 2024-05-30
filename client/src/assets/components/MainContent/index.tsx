@@ -20,9 +20,6 @@ export function MainContent() {
     const [currentArrayPeople, setCurrentPeople] = useState(arrayPeople);
     const [checkCurrentPeople, setCheckCurrentPeople] = useState(true);
     const [firstRun, setFirstRun] = useState(true);
-    // setCurrentPeople(arrayPeople);
-    // console.log(arrayPeople)
-    // console.log(window.innerWidth)
 
     /**
      * 
@@ -35,7 +32,7 @@ export function MainContent() {
         let returnedArray: any[] = [];
 
         for (let i = 0; i < parArray.length; i++) {
-            if (parArray[i][parKeyField] === targetArray[i]) {
+            if (targetArray.indexOf(parArray[i][parKeyField]) != -1) {
                 returnedArray.push(parArray[i]);
             }
         }
@@ -139,8 +136,6 @@ export function MainContent() {
      * @param event 
      */
     const handlerMapOnClick = (event: any) => {
-        let indexSpan = 0;
-        let indexPath = 0;
         let currentTarget = event.target.className.baseVal;
         let currentIndex: number = getCurrentIndexRegion(currentTarget);
         let spanCity = document.querySelector(".main-content_container_slide-menu__cities_container")?.children;
@@ -153,31 +148,30 @@ export function MainContent() {
         }
 
         for (let key in spanCity) {
-            if (spanCity[indexSpan] !== undefined) {
-                if (spanCity[indexSpan].classList.contains("active-city")) {
-                    spanCity[indexSpan].classList.remove("active-city");
+            if (!Number.isNaN(key)) {
+                if (spanCity[Number(key)] !== undefined) {
+                    if (spanCity[Number(key)].classList.contains("active-city")) {
+                        spanCity[Number(key)].classList.remove("active-city");
+                    }
                 }
             }
-
-            indexSpan++;
         }
 
 
         for (let key in pathArray) {
-            if (pathArray[indexPath]?.classList.length !== undefined) {
-                if (pathArray[indexPath].classList.contains("active-region")) {
-                    pathArray[indexPath].classList.remove("active-region");
+            if (!Number.isNaN(key)) {
+                if (pathArray[Number(key)]?.classList.length !== undefined) {
+                    if (pathArray[Number(key)].classList.contains("active-region")) {
+                        pathArray[Number(key)].classList.remove("active-region");
+                    }
                 }
             }
-
-            indexPath++;
         }
 
-        // if ((document.querySelector(`#${currentTarget}`) !== null) ||
-        //     ((document.querySelector(`.${currentTarget}`) !== null))) {
-        //     // document.querySelector(`#${currentTarget}`)?.classList.add("active-city");
-        //     // document.querySelector(`.${currentTarget}`)?.classList.add("active-region");
-        // }
+        if (currentTarget !== '') {
+            document.querySelector(`#${currentTarget}`)?.classList.add("active-city");
+            document.querySelector(`.${currentTarget}`)?.classList.add("active-region");
+        }
     }
 
     /**
