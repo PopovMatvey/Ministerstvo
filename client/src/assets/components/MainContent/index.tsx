@@ -32,7 +32,7 @@ export function MainContent() {
         let returnedArray: any[] = [];
 
         for (let i = 0; i < parArray.length; i++) {
-            if (targetArray.indexOf(parArray[i][parKeyField]) != -1) {
+            if (targetArray.indexOf(parArray[i][parKeyField]) !== -1) {
                 returnedArray.push(parArray[i]);
             }
         }
