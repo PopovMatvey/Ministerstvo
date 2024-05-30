@@ -1,8 +1,4 @@
 /* Стили основного контента */
-.wrapper{
-
-}
-
 .main-content {
     display: flex;
     color: #737373;
@@ -283,13 +279,6 @@
     }
 }
 
-/* @media screen and (max-width:930px) {
-    .main-content_map svg {
-        width: 100%;
-        transform: scale(1);
-    }
-} */
-
 @media screen and (max-width:851px) {
     .main-content_map svg g {
         transform: scale(1.2);
@@ -301,10 +290,6 @@
 }
 
 @media screen and (max-width:791px) {
-    .main-content_map svg {
-        /* width: 80%; */
-    }
-
     .main-content_map svg g {
         transform: scale(1);
     }
