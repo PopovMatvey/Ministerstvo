@@ -1,4 +1,8 @@
 /* Стили основного контента */
+.wrapper{
+
+}
+
 .main-content {
     display: flex;
     color: #737373;
@@ -37,6 +41,7 @@
 
 .main-content_container_slide-menu__humans_container_input-row input {
     border-bottom: 1px solid #da3c1f;
+    color: #fff;
     background: none;
     width: 80%;
     padding: 0px 10px;
@@ -45,6 +50,7 @@
 .main-content_container_slide-menu__humans_container_input-row input:focus {
     border: 1px solid #fff;
     color: #fff;
+    font-weight: 700;
     border-radius: 5px;
 }
 
@@ -232,33 +238,37 @@
 
 .main-content_map svg {
     height: auto;
-    width: 45%;
+    width: 40%;
 }
 
 .main-content_map svg g {
-    transform: scale(2.5);
+    transform: scale(2);
 }
 
 @media screen and (max-width:1800px) {
     .main-content_map svg {
-        width: 50%;
+        width: 45%;
     }
 
 
     .main-content_map svg g {
-        transform: scale(2);
+        transform: scale(1.6);
     }
 }
 
 @media screen and (max-width:1400px) {
     .main-content_map svg {
-        width: 65%;
+        width: 55%;
     }
 }
 
 @media screen and (max-width:1200px) {
     .main-content_map svg {
-        width: 75%;
+        width: 65%;
+    }
+    
+    .main-content_map svg g {
+        transform: scale(1.4);
     }
 }
 
@@ -267,18 +277,22 @@
     .main-content_map svg {
         transform: scale(1);
     }
+    
+    .main-content_map svg g {
+        transform: scale(1.2);
+    }
 }
 
-@media screen and (max-width:930px) {
+/* @media screen and (max-width:930px) {
     .main-content_map svg {
         width: 100%;
         transform: scale(1);
     }
-}
+} */
 
-@media screen and (max-width:771px) {
+@media screen and (max-width:851px) {
     .main-content_map svg g {
-        transform: scale(1.5);
+        transform: scale(1.2);
     }
 
     .main-content_map svg {
@@ -286,32 +300,46 @@
     }
 }
 
-@media screen and (max-width:691px) {
+@media screen and (max-width:791px) {
     .main-content_map svg {
-        width: 80%;
+        /* width: 80%; */
     }
 
+    .main-content_map svg g {
+        transform: scale(1);
+    }
+}
+
+@media screen and (max-width:700px) {
+    .main-content_map svg {
+        width: 100%;
+    }
+
+    .main-content_map svg g {
+        transform: scale(2);
+    }
+}
+
+@media screen and (max-width:690px) {
+    .main-content_map svg g {
+        transform: scale(1.7);
+    }
+}
+
+@media screen and (max-width:630px) {
     .main-content_map svg g {
         transform: scale(1.5);
     }
 }
 
-@media screen and (max-width:623px) {
-    .main-content_map svg {
-        width: 70%;
-    }
-
+@media screen and (max-width:550px) {
     .main-content_map svg g {
-        transform: scale(0.9);
+        transform: scale(1.4);
     }
 }
 
-@media screen and (max-width:433px) {
-    .main-content_map svg {
-        width: 60%;
-    }
-
+@media screen and (max-width:483px) {
     .main-content_map svg g {
-        transform: scale(0.7);
+        transform: scale(1.15);
     }
 }
