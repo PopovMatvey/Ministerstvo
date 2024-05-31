@@ -261,15 +261,19 @@ export function MainContent() {
                                 </div>}
                             </div>
                         </div>
-                        {
-                            currentCity ? (
-                                <div className="main-content_map_title">
-                                    <h3>{currentCity}</h3>
-                                </div>)
-                                : (
-                                    <></>
-                                )}
-                        <div className="main-content_map" dangerouslySetInnerHTML={{ __html: ryazanAllRegionSVG }} onClick={handlerMapOnClick}></div>
+                        <div className="main-content_map_container">
+                            {
+                                currentCity ? (
+                                    <div className="main-content_map_title">
+                                        <h3>{currentCity}</h3>
+                                    </div>)
+                                    : (
+                                        <></>
+                                    )
+                            }
+                            <div className="main-content_map" dangerouslySetInnerHTML={{ __html: ryazanAllRegionSVG }} onClick={handlerMapOnClick}></div>
+
+                        </div>
                     </div>
                     <div className="slide-menu-container">
                         <button onClick={handlerOnClickSideMenuButton}>Книги победы <img src={book} alt="книга" /></button>
