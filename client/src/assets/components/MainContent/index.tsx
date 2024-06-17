@@ -14,6 +14,7 @@ export function MainContent() {
     // const apiPeople = "http://localhost:2000/api/people";
     const [stateViewBooks, setStateViewBooks] = useState(false);
     const [stateViewCities, setStateViewCities] = useState(false);
+    const [stateViewPeoples, setStateViewPeoples] = useState(false);
     const [currentCity, setCurrentCity] = useState("");
     const arrayRegions: Region[] = useGetRequest("http://5.35.94.98:2000/api/regions").requestArray;
     const arrayPeople: People[] = useGetRequest(apiPeople).requestArray;
@@ -133,6 +134,13 @@ export function MainContent() {
 
     /**
      * 
+     */
+    const handlerColomnPeoples = () => {
+        setStateViewPeoples(!stateViewPeoples);
+    }
+
+    /**
+     * 
      * @param event 
      */
     const handlerMapOnClick = (event: any) => {
@@ -140,12 +148,14 @@ export function MainContent() {
         let currentIndex: number = getCurrentIndexRegion(currentTarget);
         let spanCity = document.querySelector(".main-content_container_slide-menu__cities_container")?.children;
         let pathArray = document.querySelector(".main-content_map svg g")?.children;
+        let curentPeopleRegion = [];
 
         if (currentIndex !== -1) {
             setCurrentCity(arrayRegions[currentIndex].name_region);
         } else {
             setCurrentCity("");
         }
+
 
         for (let key in spanCity) {
             if (!Number.isNaN(key)) {
@@ -156,7 +166,6 @@ export function MainContent() {
                 }
             }
         }
-
 
         for (let key in pathArray) {
             if (!Number.isNaN(key)) {
@@ -171,6 +180,19 @@ export function MainContent() {
         if (currentTarget !== '') {
             document.querySelector(`#${currentTarget}`)?.classList.add("active-city");
             document.querySelector(`.${currentTarget}`)?.classList.add("active-region");
+
+            setFirstRun(false);
+
+            console.log(arrayPeople[0].name_region)
+                for (let i = 0; i < arrayPeople.length; i++) {
+                    if (arrayPeople[i]?.name_region === arrayRegions[currentIndex]?.name_region) {
+                        curentPeopleRegion.push(arrayPeople[i]);
+                    }
+                }
+
+            setCurrentPeople(curentPeopleRegion);
+        } else {
+            setCurrentPeople(arrayPeople);
         }
     }
 
@@ -207,9 +229,13 @@ export function MainContent() {
                                             </button>
                                             <input type="text" onKeyUp={onKeyDownInputSearchPeople} />
                                         </div>
-                                        {
+                                        <div className="main-content_container_slide-menu__cities_row">
+                                            <button onClick={handlerColomnPeoples}>Развернуть v</button>
+                                        </div>
+                                        {stateViewPeoples && <> {
                                             firstRun ? (
                                                 arrayPeople.map((element: People, index: number) => (
+
                                                     <div className="main-content_container_slide-menu__humans_container_user" key={index} >
                                                         {element.photo ? (
                                                             <img src={element.photo} alt="user" />
@@ -247,7 +273,7 @@ export function MainContent() {
                                                             <h4>Таких людей нет</h4>
                                                         </div>
                                                     ))
-                                        }
+                                        }</>}
                                     </div>
                                 </div>
                                 <div className="main-content_container_slide-menu__cities">
@@ -295,7 +321,6 @@ export function MainContent() {
                             <span>Года ВОВ в Рязанской области</span>
                         </button>
                     </div>}
-
                 </div >
                 <Footer />
             </div>
