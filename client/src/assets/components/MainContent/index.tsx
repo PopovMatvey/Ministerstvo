@@ -196,71 +196,74 @@ export function MainContent() {
             <div className="wrapper">
                 <div className="main-content">
                     <div className="main-content_container">
-                        <div className="main-content_container_slide-menu">
-                            <div className="main-content_container_slide-menu__humans">
-                                <h3>Люди</h3>
-                                <div className="main-content_container_slide-menu__humans_container">
-                                    <div className="main-content_container_slide-menu__humans_container_input-row">
-                                        <button>
-                                            <img src={lupa} alt="лупа" />
-                                        </button>
-                                        <input type="text" onKeyUp={onKeyDownInputSearchPeople} />
-                                    </div>
-                                    {
-                                        firstRun ? (
-                                            arrayPeople.map((element: People, index: number) => (
-                                                <div className="main-content_container_slide-menu__humans_container_user" key={index} >
-                                                    {element.photo ? (
-                                                        <img src={element.photo} alt="user" />
+                        <div className="main-content_container_slide-menu__wrapper">
+                            <div className="main-content_container_slide-menu">
+                                <div className="main-content_container_slide-menu__humans">
+                                    <h3>Люди</h3>
+                                    <div className="main-content_container_slide-menu__humans_container">
+                                        <div className="main-content_container_slide-menu__humans_container_input-row">
+                                            <button>
+                                                <img src={lupa} alt="лупа" />
+                                            </button>
+                                            <input type="text" onKeyUp={onKeyDownInputSearchPeople} />
+                                        </div>
+                                        {
+                                            firstRun ? (
+                                                arrayPeople.map((element: People, index: number) => (
+                                                    <div className="main-content_container_slide-menu__humans_container_user" key={index} >
+                                                        {element.photo ? (
+                                                            <img src={element.photo} alt="user" />
+                                                        ) : (
+                                                            <img src={logoUser} alt="user" />
+                                                        )}
+                                                        <div className="main-content_container_slide-menu__humans_container_user__text">
+                                                            <h4>{element.surname} {element.patronymic[0]}.</h4>
+                                                            <span>
+                                                                {getShortString(element.war_description)}
+                                                            </span>
+                                                        </div>
+                                                    </div>)
+                                                )
+                                            ) :
+                                                (
+                                                    checkCurrentPeople ? (
+                                                        currentArrayPeople.map((element: People, index: number) => (
+                                                            <div className="main-content_container_slide-menu__humans_container_user" key={index} >
+                                                                {element.photo ? (
+                                                                    <img src={element.photo} alt="user" />
+                                                                ) : (
+                                                                    <img src={logoUser} alt="user" />
+                                                                )}
+                                                                <div className="main-content_container_slide-menu__humans_container_user__text">
+                                                                    <h4>{element.surname} {element.patronymic[0]}.</h4>
+                                                                    <span>
+                                                                        {getShortString(element.war_description)}
+                                                                    </span>
+                                                                </div>
+                                                            </div>)
+                                                        )
                                                     ) : (
-                                                        <img src={logoUser} alt="user" />
-                                                    )}
-                                                    <div className="main-content_container_slide-menu__humans_container_user__text">
-                                                        <h4>{element.surname} {element.patronymic[0]}.</h4>
-                                                        <span>
-                                                            {getShortString(element.war_description)}
-                                                        </span>
-                                                    </div>
-                                                </div>)
-                                            )
-                                        ) :
-                                            (
-                                                checkCurrentPeople ? (
-                                                    currentArrayPeople.map((element: People, index: number) => (
-                                                        <div className="main-content_container_slide-menu__humans_container_user" key={index} >
-                                                            {element.photo ? (
-                                                                <img src={element.photo} alt="user" />
-                                                            ) : (
-                                                                <img src={logoUser} alt="user" />
-                                                            )}
-                                                            <div className="main-content_container_slide-menu__humans_container_user__text">
-                                                                <h4>{element.surname} {element.patronymic[0]}.</h4>
-                                                                <span>
-                                                                    {getShortString(element.war_description)}
-                                                                </span>
-                                                            </div>
-                                                        </div>)
-                                                    )
-                                                ) : (
-                                                    <div className="main-content_container_slide-menu__humans_container_user">
-                                                        <h4>Таких людей нет</h4>
-                                                    </div>
-                                                ))
-                                    }
+                                                        <div className="main-content_container_slide-menu__humans_container_user">
+                                                            <h4>Таких людей нет</h4>
+                                                        </div>
+                                                    ))
+                                        }
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="main-content_container_slide-menu__cities">
-                                <h3>Города</h3>
-                                <div className="main-content_container_slide-menu__cities_row">
-                                    <button onClick={handlerColomnCities}>Развернуть v</button>
+                                <div className="main-content_container_slide-menu__cities">
+                                    <h3>Города</h3>
+                                    <div className="main-content_container_slide-menu__cities_row">
+                                        <button onClick={handlerColomnCities}>Развернуть v</button>
+                                    </div>
+                                    {stateViewCities && <div className="main-content_container_slide-menu__cities_container">
+                                        {arrayRegions.map((element: Region, index: number) => (
+                                            <span key={index} id={element.class_region}>{element.name_region}</span>
+                                        ))}
+                                    </div>}
                                 </div>
-                                {stateViewCities && <div className="main-content_container_slide-menu__cities_container">
-                                    {arrayRegions.map((element: Region, index: number) => (
-                                        <span key={index} id={element.class_region}>{element.name_region}</span>
-                                    ))}
-                                </div>}
                             </div>
                         </div>
+
                         <div className="main-content_map_container">
                             {
                                 currentCity ? (
