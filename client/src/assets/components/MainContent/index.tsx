@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, {
+    //  useEffect,
+      useState } from "react";
 import "./css/style.css";
 import logoUser from "../../images/user.jpg"
 import lupa from "../../images/lupa.png"
@@ -14,7 +16,7 @@ export function MainContent() {
     // const apiPeople = "http://localhost:2000/api/people";
     const [stateViewBooks, setStateViewBooks] = useState(false);
     const [stateViewCities, setStateViewCities] = useState(false);
-    const [stateViewPeoples, setStateViewPeoples] = useState(false);
+    // const [stateViewPeoples, setStateViewPeoples] = useState(false);
     const [currentCity, setCurrentCity] = useState("");
     const arrayRegions: Region[] = useGetRequest("http://5.35.94.98:2000/api/regions").requestArray;
     const arrayPeople: People[] = useGetRequest(apiPeople).requestArray;
@@ -49,12 +51,18 @@ export function MainContent() {
         let keyField = "surname";
 
         setFirstRun(false);
-        setCurrentPeople(
-            findPeopleArray(
-                arrayPeople,
-                findDetermPeople(event.target.value, getObjectFieldToArray(arrayPeople, keyField)),
-                keyField
-            ));
+
+        let processPeopleArray = findPeopleArray(
+            arrayPeople,
+            findDetermPeople(event.target.value, getObjectFieldToArray(arrayPeople, keyField)),
+            keyField
+        );
+
+        if (JSON.stringify(arrayPeople) === JSON.stringify(processPeopleArray)) {
+            setFirstRun(true);
+        } else {
+            setCurrentPeople(processPeopleArray);
+        }
     }
 
     const getObjectFieldToArray = (parArray: any, parNameField: any) => {
@@ -74,7 +82,7 @@ export function MainContent() {
      * @returns 
      */
     function findDetermPeople(parInputText: string, parArray: any) {
-        const regString = `^${parInputText}`;
+        const regString = `^${parInputText.trim()}`;
         const regex = new RegExp(regString, 'i');
 
         return searchPeople(parArray, regex);
@@ -135,9 +143,9 @@ export function MainContent() {
     /**
      * 
      */
-    const handlerColomnPeoples = () => {
-        setStateViewPeoples(!stateViewPeoples);
-    }
+    // const handlerColomnPeoples = () => {
+    //     setStateViewPeoples(!stateViewPeoples);
+    // }
 
     /**
      * 
@@ -184,15 +192,15 @@ export function MainContent() {
             setFirstRun(false);
 
             console.log(arrayPeople[0].name_region)
-                for (let i = 0; i < arrayPeople.length; i++) {
-                    if (arrayPeople[i]?.name_region === arrayRegions[currentIndex]?.name_region) {
-                        curentPeopleRegion.push(arrayPeople[i]);
-                    }
+            for (let i = 0; i < arrayPeople.length; i++) {
+                if (arrayPeople[i]?.name_region === arrayRegions[currentIndex]?.name_region) {
+                    curentPeopleRegion.push(arrayPeople[i]);
                 }
+            }
 
             setCurrentPeople(curentPeopleRegion);
         } else {
-            setCurrentPeople(arrayPeople);
+            setFirstRun(!firstRun);
         }
     }
 
@@ -209,9 +217,9 @@ export function MainContent() {
         return parString;
     }
 
-    useEffect(() => {
-        setCurrentPeople(arrayPeople);
-    }, [checkCurrentPeople, arrayPeople])
+    // useEffect(() => {
+    //     // setCurrentPeople(arrayPeople);
+    // }, [checkCurrentPeople, arrayPeople])
 
     return (
         <>
@@ -229,51 +237,54 @@ export function MainContent() {
                                             </button>
                                             <input type="text" onKeyUp={onKeyDownInputSearchPeople} />
                                         </div>
-                                        <div className="main-content_container_slide-menu__cities_row">
+                                        {/* <div className="main-content_container_slide-menu__cities_row">
                                             <button onClick={handlerColomnPeoples}>Развернуть v</button>
-                                        </div>
-                                        {stateViewPeoples && <> {
-                                            firstRun ? (
-                                                arrayPeople.map((element: People, index: number) => (
+                                        </div> */}
+                                        {/* {stateViewPeoples && <> { */}
+                                        {firstRun ? (
+                                            <div className="main-content_container_slide-menu__humans_container_user">
+                                                <h4>Нажмите на регион или введите фамилию ветерана</h4>
+                                            </div>
+                                            // arrayPeople.map((element: People, index: number) => (
 
-                                                    <div className="main-content_container_slide-menu__humans_container_user" key={index} >
-                                                        {element.photo ? (
-                                                            <img src={element.photo} alt="user" />
-                                                        ) : (
-                                                            <img src={logoUser} alt="user" />
-                                                        )}
-                                                        <div className="main-content_container_slide-menu__humans_container_user__text">
-                                                            <h4>{element.surname} {element.patronymic[0]}.</h4>
-                                                            <span>
-                                                                {getShortString(element.war_description)}
-                                                            </span>
-                                                        </div>
-                                                    </div>)
-                                                )
-                                            ) :
-                                                (
-                                                    checkCurrentPeople ? (
-                                                        currentArrayPeople.map((element: People, index: number) => (
-                                                            <div className="main-content_container_slide-menu__humans_container_user" key={index} >
-                                                                {element.photo ? (
-                                                                    <img src={element.photo} alt="user" />
-                                                                ) : (
-                                                                    <img src={logoUser} alt="user" />
-                                                                )}
-                                                                <div className="main-content_container_slide-menu__humans_container_user__text">
-                                                                    <h4>{element.surname} {element.patronymic[0]}.</h4>
-                                                                    <span>
-                                                                        {getShortString(element.war_description)}
-                                                                    </span>
-                                                                </div>
-                                                            </div>)
-                                                        )
-                                                    ) : (
-                                                        <div className="main-content_container_slide-menu__humans_container_user">
-                                                            <h4>Таких людей нет</h4>
-                                                        </div>
-                                                    ))
-                                        }</>}
+                                            //     <div className="main-content_container_slide-menu__humans_container_user" key={index} >
+                                            //         {element.photo ? (
+                                            //             <img src={element.photo} alt="user" />
+                                            //         ) : (
+                                            //             <img src={logoUser} alt="user" />
+                                            //         )}
+                                            //         <div className="main-content_container_slide-menu__humans_container_user__text">
+                                            //             <h4>{element.surname} {element.patronymic[0]}.</h4>
+                                            //             <span>
+                                            //                 {getShortString(element.war_description)}
+                                            //             </span>
+                                            //         </div>
+                                            //     </div>)
+                                            // )
+                                        ) :
+                                            (
+                                                checkCurrentPeople ? (
+                                                    currentArrayPeople.map((element: People, index: number) => (
+                                                        <div className="main-content_container_slide-menu__humans_container_user" key={index} >
+                                                            {element.photo ? (
+                                                                <img src={element.photo} alt="user" />
+                                                            ) : (
+                                                                <img src={logoUser} alt="user" />
+                                                            )}
+                                                            <div className="main-content_container_slide-menu__humans_container_user__text">
+                                                                <h4>{element.surname} {element.patronymic[0]}.</h4>
+                                                                <span>
+                                                                    {getShortString(element.war_description)}
+                                                                </span>
+                                                            </div>
+                                                        </div>)
+                                                    )
+                                                ) : (
+                                                    <div className="main-content_container_slide-menu__humans_container_user">
+                                                        <h4>Таких людей нет</h4>
+                                                    </div>
+                                                ))}
+                                        {/* }</>} */}
                                     </div>
                                 </div>
                                 <div className="main-content_container_slide-menu__cities">
